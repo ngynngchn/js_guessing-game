@@ -5,38 +5,60 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<link rel="stylesheet" href="./assets/css/style.css" />
 	</head>
 	<body>
 		<main>
-			<h1>Number Guessing Game 1-100</h1>
-
-			<section>Hi! Can you guess the number I am thinking of?</section>
+			<h1>Guess my age!</h1>
+			<section class="description">
+				<p>
+					I might be 3, I might be 40, but I am older than 0 and younger than
+					100. How old am I? Do you dare to guess?
+				</p>
+			</section>
 
 			<section class="rounds-section">
 				<h2>How many times do you want to guess?</h2>
-				<input type="radio" name="rounds" id="four" value="4" />
-				<label for="four">4</label>
-				<input type="radio" name="rounds" id="five" value="5" />
-				<label for="five">5</label>
-				<input type="radio" name="rounds" id="six" value="6" />
-				<label for="six">6</label>
-				<input type="radio" name="rounds" id="custom" value="0" />
-				<label for="custom">custom</label>
-				<input type="number" name="rounds" id="customInput" hidden />
+				<article>
+					<input type="radio" name="rounds" id="four" value="4" />
+					<label for="four">4</label>
+					<input type="radio" name="rounds" id="five" value="5" />
+					<label for="five">5</label>
+					<input type="radio" name="rounds" id="six" value="6" />
+					<label for="six">6</label>
+					<input type="radio" name="rounds" id="custom" value="0" />
+					<label for="custom">custom</label>
+					<input
+						type="number"
+						name="rounds"
+						id="customInput"
+						hidden
+						min="0"
+						max="100" />
+				</article>
 			</section>
 
 			<section class="counter">
-				<h2>Guess my number!</h2>
-				<h3 class="chosen-rounds"></h3>
-				<h3 class="round"></h3>
+				<h2>Guesses</h2>
+
+				<article>
+					<h3 class="round">0</h3>
+					<h3>of</h3>
+					<h3 class="chosen-rounds">0</h3>
+				</article>
 			</section>
 
-			<section>
+			<section class="input-section">
+				<h2>How old am I?</h2>
 				<input type="number" name="input" id="input" min="0" max="100" />
 				<button type="button">GUESS</button>
 			</section>
 
 			<section class="output"></section>
+
+			<article class="reset">
+				<a href="/index.html">Guess Again!</a>
+			</article>
 		</main>
 
 		<script src="./assets/js/main.js"></script>

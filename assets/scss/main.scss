@@ -1,0 +1,152 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	background-color: #dfcfb4;
+}
+
+main {
+	width: 400px;
+	margin: 2rem auto;
+	border-radius: 10px;
+	background: #dfcfb4;
+	box-shadow: inset -5px -5px 10px #a59985, inset 5px 5px 10px #ffffe3;
+	padding: 1rem;
+	color: rgb(32, 32, 32);
+	position: relative;
+
+	h1 {
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+	}
+	section {
+		margin-top: 1rem;
+
+		h2 {
+			font-size: 1rem;
+		}
+	}
+}
+
+.description,
+.reset {
+	padding: 0.5rem;
+
+	border-radius: 10px;
+	background: #dfcfb4;
+	box-shadow: -10px -10px 19px #cdbea6, 10px 10px 19px #f1e0c2;
+}
+
+.rounds-section {
+	article {
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
+		input[type="radio"] {
+			all: unset;
+			&:checked + label {
+				border-radius: 10px;
+				background: #dfcfb4;
+				box-shadow: -5px -5px 9px #cdbea6, 5px 5px 9px #f1e0c2;
+			}
+		}
+		label {
+			cursor: pointer;
+			padding: 0.5rem 1rem;
+			margin: 1rem 0;
+			border-radius: 10px;
+			&:hover {
+				border-radius: 10px;
+				background: #dfcfb4;
+				box-shadow: -5px -5px 9px #cdbea6, 5px 5px 9px #f1e0c2;
+			}
+		}
+	}
+}
+
+#customInput {
+	margin: 1rem;
+	width: 3rem;
+	text-align: center;
+	border: none;
+	border-radius: 3px;
+}
+
+#input {
+	padding: 1rem;
+	border-radius: 3px;
+	border: none;
+	font-size: 2rem;
+	text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+button {
+	padding: 1rem 2rem;
+	border-radius: 3px;
+	border: none;
+	border-radius: 10px;
+	background: #dfcfb4;
+	box-shadow: inset -5px -5px 10px #cbbca4, inset 5px 5px 10px #f3e2c4;
+	display: block;
+	margin: 0.5rem 0;
+	color: rgb(34, 33, 33);
+	font-weight: 600;
+	cursor: pointer;
+	&:hover {
+		transform: translateY(2px);
+	}
+}
+
+.counter {
+	article {
+		height: 5rem;
+		display: flex;
+		justify-content: center;
+		h3 {
+			padding: 1rem;
+			font-size: 2rem;
+			display: inline;
+		}
+	}
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.input-section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.reset {
+	margin: 1rem auto;
+	display: none;
+	padding: 0.5rem;
+	width: 200px;
+	text-align: center;
+
+	a {
+		margin-bottom: 0;
+		color: black;
+		text-decoration: none;
+		font-weight: 600;
+	}
+}
+
+.show {
+	display: block;
+}

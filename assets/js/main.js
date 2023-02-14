@@ -12,27 +12,32 @@ const output = document.querySelector(".output");
 
 //* ============ Functions
 
-let rounds = 0;
 let count = 0;
+let rounds = 0;
 let pcChoice;
 
-// determine amound of tries
+// determine times to play
 inputs.forEach((element) => {
 	element.addEventListener("change", () => {
 		pcChoice = Math.floor(Math.random() * 100);
-		if (element.value == 0) {
+
+		if (element.value === "0") {
 			roundsInput.hidden = false;
-			rounds = roundsInput.value;
+			roundsInput.addEventListener("input", () => {
+				rounds = roundsInput.value;
+				chosenRoundsOutput.innerHTML = rounds;
+			});
 		} else {
 			rounds = element.value;
+			chosenRoundsOutput.innerHTML = rounds;
 		}
-		chosenRoundsOutput.innerHTML = rounds;
 	});
 });
+
 submit.addEventListener("click", play);
 
 function play() {
-	if (userGuess.value !== "") {
+	if (userGuess.value !== "" && userGuess.value > 0) {
 		let userChoice = userGuess.value;
 		let message = document.createElement("p");
 
@@ -44,20 +49,15 @@ function play() {
 		}
 
 		if (count === +rounds) {
-			message.innerHTML = `${count}- You have no guesses left. ${userChoice} is not my number.`;
-			output.appendChild(message);
-			reset.hidden = false;
-			return;
+			message.innerHTML = `${count}.Try -Sorry. You have no guesses left. ${userChoice} is not my age.`;
+			document.querySelector(".reset").classList.add("show");
 		} else if (userChoice == pcChoice) {
-			message.innerHTML = `Yes! You got me in ${count} guesses. My number is ${pcChoice}.`;
-			output.appendChild(message);
-			reset.hidden = false;
+			message.innerHTML = `Yes! It took you ${count} guesses. I am ${pcChoice} years old.`;
 		} else if (userChoice > pcChoice) {
-			message.innerHTML = `${count}- You need to guess lower than ${userChoice}, try again!`;
-			output.appendChild(message);
+			message.innerHTML = `${count}.Try - No! I am younger than ${userChoice}, try again!`;
 		} else if (userChoice < pcChoice) {
-			message.innerHTML = `${count}- You need to guess higher than ${userChoice}, try again!`;
-			output.appendChild(message);
+			message.innerHTML = `${count}.Try - No! I am older than ${userChoice}, try again!`;
 		}
+		output.appendChild(message);
 	}
 }
